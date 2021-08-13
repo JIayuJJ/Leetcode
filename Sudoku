@@ -1,0 +1,23 @@
+数独的规则：每一行中元素只出现一次，每一列中元素只出现一次，【0-2，3-5，6-8】中元素只出现一次
+
+验证数独的有效性就是确保以上三个条件是满足的
+
+本程序中新出现的函数：
+1. all, all 中的所有判断条件为True，则返回True
+2. zip(*board), 可以进行转秩
+
+input = array
+
+row = [[x for x in y if x != "."]for y in board]
+col = [[x for x in y if x != "."]for y in zip(*board)]
+pal = [[board[i+m][j+l] for i in range(0,3) for j in range(0,3) if board[i+m][j+l] != "."] for m in [0,3,6] for l in [0,3,6]]
+
+return all(len(set(y) == len(y) for y in (*row, *col, *pal))
+
+关键点：
+1. 三个逻辑层次要分别写出
+2. 可以一起判断
+3. 充分利用list的元素特性
+
+
+
