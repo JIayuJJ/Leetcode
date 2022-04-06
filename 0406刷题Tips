@@ -2,3 +2,4 @@ MYSQL刷题
 TIPS：
 1、mysql没有full join
 2、distinct 语句后的变量会同时做distinct
+3、ifnull是SQL中一种用法，可以为NVL 或者别的表达方式
